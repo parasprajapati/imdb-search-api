@@ -4,7 +4,7 @@ var cheerio = require('cheerio');
 var router = express.Router();
 
 /* GET titles search result. */
-router.get('/search/title', function(req, res, next) {
+router.get('/title/search', function(req, res, next) {
   var results = [];
   url = 'https://www.imdb.com/find?q=' + req.query.search_query + '&s=tt&ref_=fn_al_tt_mr';
   request(url, function(error, response, html) {
@@ -26,7 +26,7 @@ router.get('/search/title', function(req, res, next) {
 });
 
 /* GET info about a specific title. */
-router.get('/get/title', function(req, res, next) {
+router.get('/title/get', function(req, res, next) {
   var results = {
     title: '',
     rating: '',
